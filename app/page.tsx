@@ -8,9 +8,9 @@ const Audios = [
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Welcome to <Link href="https://nofaceaudio.vercel.app">https://nofaceaudio.vercel.app</Link></h1>
+      <h1>Welcome to <Link href="https://nofaceaudios.vercel.app">https://nofaceaudios.vercel.app</Link></h1>
       {Audios.map(audio => <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <label>Sintax: <audio controls src={audio.src} /></label>
+        <label>Sintax, Mk1 <audio controls src={audio.src} /></label>
       </div>)}
     </main>
   );
