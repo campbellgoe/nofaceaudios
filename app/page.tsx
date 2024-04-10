@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 const Audios = [
 {
-  src: '/Sintax.wav'
+  src: '/Sintax.wav?v=1'
 }
 ]
 export default function Home() {
