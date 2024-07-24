@@ -17,7 +17,12 @@ function Audios() {
   return (
     <>
       {AudiosData.map((audio, index) => <div key={audio.src} className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <label>{audio.label} <audio controls src={audio.src} onPlay={() => {
+        <label>{audio.label} <audio controls src={audio.src} onVolumeChange={(e: any) => {
+          // set all audios to the desired volume
+          audioRefs.current.forEach((audio, j) => {
+            if(index !== j) audio.volume = e.target.volume
+          })
+        }} onPlay={() => {
           const audioEls = audioRefs.current
           audioEls.forEach((el, j) => {
            if (index != j){
