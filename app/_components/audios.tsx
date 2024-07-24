@@ -9,8 +9,8 @@ function Audios() {
       src: '/SintaxMk2.wav'
     },
     {
-      label: 'Cool beat 1 (untitled), 23/07/2024',
-      src: '/coolbeat1-23-07-2024.wav'
+      label: 'Tidal wave - Noface (24/7/2024)',
+      src: '/Tidal_wave.coolbeat1-24-07-2024-1404.wav'
     }
   ]
   const audioRefs = React.useRef<HTMLAudioElement[]>([]);
