@@ -35,15 +35,16 @@ function Audio({ totalItemsLength, audioRefs, audio, index }: any) {
 function Audios() {
   const AudiosData = [
     {
+      label: 'Tidal Wave',
+      src: '/Tidal_wave.coolbeat1-24-07-2024-1404.wav',
+      releaseDate: 'July 2024'
+    },
+    {
       label: 'Syntax',
       src: '/SintaxMk2.wav',
       releaseDate: 'April 2024'
     },
-    {
-      label: 'Tidal Wave',
-      src: '/Tidal_wave.coolbeat1-24-07-2024-1404.wav',
-      releaseDate: 'July 2024'
-    }
+    
   ]
   const audioRefs = React.useRef<HTMLAudioElement[]>([]);
   return (
