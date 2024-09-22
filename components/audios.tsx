@@ -26,7 +26,7 @@ function Audio({ totalItemsLength, audioRefs, audio, index }: any) {
           })
           if(!canPlayThrough){
             console.warn("audio not loaded yet")
-            alert("Loading... Wait a little for the audio to load please...")
+            alert("Loading...")
            }
         }} onEnded={(event: any) => {
           // if there is a next audio, play it on ended this audio
