@@ -1,7 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Audios from "./_components/audios";
+import Audios from "../components/audios";
 
 export default function Home() {
   return (

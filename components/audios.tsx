@@ -3,22 +3,33 @@
 import React from 'react'
 
 function Audio({ totalItemsLength, audioRefs, audio, index }: any) {
+  const [canPlayThrough, setCanPlayThrough] = React.useState(false)
+  const onCanPlayThrough = () => {
+    setCanPlayThrough(true)
+  }
  return <div>
          <h2 className="text-3xl font-bold mb-4">{audio.label}</h2>
          <p className="text-gray-300 mb-4">Released: {audio.releaseDate}</p>
-          <audio className="w-full rounded-lg bg-gray-800" controls src={audio.src} onVolumeChange={(e: any) => {
+          <audio onCanPlayThrough={onCanPlayThrough} className="w-full rounded-lg bg-gray-800" controls src={audio.src} onVolumeChange={(e: any) => {
           // set all audios to the desired volume
           audioRefs.current.forEach((audio: HTMLAudioElement, j: number) => {
             if(index !== j) audio.volume = e.target.volume
           })
         }} onPlay={() => {
+         
+          // pause all other audios or if not loaded pause it
           const audioEls = audioRefs.current
           audioEls.forEach((el: HTMLAudioElement, j: number) => {
-           if (index != j){
+           if (index != j || !canPlayThrough){
              el.pause();
            }
           })
+          if(!canPlayThrough){
+            console.warn("audio not loaded yet")
+            alert("Loading... Wait a little for the audio to load please...")
+           }
         }} onEnded={(event: any) => {
+          // if there is a next audio, play it on ended this audio
           if (index + 1 < totalItemsLength) {
             const node = audioRefs.current?.[index + 1]
             if (node) {
